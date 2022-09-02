@@ -1,0 +1,19 @@
+# DOTFILES
+.env
+.firebaserc
+
+# FILES
+firebase.json
+firestore.indexes.json
+firestore.rules
+yarn-error.log
+yarn.lock
+
+# DIRECTORIES
+node_modules/*
+key/*
+
+# OTHER
+y
+yarn-error.log
+yarn.lock
