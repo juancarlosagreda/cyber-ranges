@@ -8,6 +8,7 @@ firestore.indexes.json
 firestore.rules
 yarn-error.log
 yarn.lock
+static/assets/javascripts/hash.js
 
 # DIRECTORIES
 node_modules/*
