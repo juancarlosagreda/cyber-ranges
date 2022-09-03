@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css"
+        integrity="sha512-EZLkOqwILORob+p0BXZc+Vm3RgJBOe1Iq/0fiI7r/wJgzOFZMlsqTa29UEl6v6U6gsV4uIpsNZoV32YZqrCRCQ=="
+        crossorigin="anonymous" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-signin-client_id"
+        content="418787707761-hmj7gevckoj7hvbbeanlg9cno2vje2qi.apps.googleusercontent.com">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <title>Cyber Ranges</title>
+</head>
+
+<body>
+    <!-- ================================ NAVBAR ======================================= -->
+    <nav class="navbar sticky-top navbar-expand navbar-dark bg-primary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <h3>Cyber Ranges</h3>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <!-- <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            About
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li> -->
+                </ul>
+                </li>
+                </ul>
+                <div id="signIn" class="g-signin2" data-onsuccess="onSignIn"></div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ================================ MAIN JUMBOTRON ======================================= -->
+
+    <div class="p-5 mb-4 bg-light rounded-3">
+        <div class="container-fluid py-5">
+            <h1 class="display-5 fw-bold">It's time for a change</h1>
+            <p class="col-md-8 fs-4">“It takes 20 years to build a reputation and few minutes of cyber-incident to ruin
+                it.” (Stephane Nappo). This quote by the 2018 Chief Information Security Officer (CISO) of the year,
+                depicts the reality of the situation that we are living currently, because many companies focus solely
+                on the business side of their respective models and don’t focus on security. This tool will propagate
+                your knowledge to make safer business decisions.</p>
+            <button onclick="window.location.href='/dashboard'" class="btn btn-primary btn-lg" type="button">Get
+                started</button>
+        </div>
+    </div>
+
+    <!-- ================================ 2 COLUMNS OF JUMBOTRONS ======================================= -->
+    <div class="row align-items-md-stretch">
+        <div class="col-md-6">
+            <div class="h-100 p-5 bg-light border rounded-3">
+                <h2 class="display-5 fw-bold">Models implemented</h2>
+                <font size="+0">
+                    <p class="col-md-8 fs-4">There are four models implemented in this application, which are comprised
+                        as follows:
+                    </p>
+                    <ul>
+                        <li><a href="#impact" class="link-secondary">Impact of Detection Systems</a></li>
+                        <li><a href="#staff" class="link-secondary">Staff Training and System Detection</a></li>
+                        <li><a href="#info" class="link-secondary">Information Security and Business Continuity
+                                Management</a></li>
+                        <li><a href="#cyber" class="link-secondary">Cyber Resilience Management in a Company</a></li>
+                    </ul>
+                </font>
+                <button class="btn btn-outline-light" type="button">Example button</button>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="h-100 p-5 bg-light border rounded-3">
+                <h2 class="display-5 fw-bold">Source code</h2>
+                <p class="col-md-8 fs-4">Version control isn’t just a tool for developers, it is a way of managing code
+                    that lets programmers
+                    and administrators of applications to isolate the features that they are working in to be able to
+                    deploy applications faster and more reliable way. For this tool, Git and Github were valuable
+                    assets.</p>
+                <button class="btn btn-outline-secondary" type="button"
+                    onclick="location.href='https://github.com/juancarlosagreda/CyberRanges'">Github repository</button>
+            </div>
+        </div>
+    </div>
+    <br>
+    <!-- ================================ Model 1 JUMBOTRON ======================================= -->
+
+    <div class="p-5 mb-4 bg-light rounded-3" id="detection">
+        <div class="container-fluid py-5">
+            <h1 class="display-5 fw-bold">Impact of Detection Systems</h1>
+            <p class="col-md-8 fs-4">
+                Cyber-attacks are becoming more sophisticated and thereby presenting increasing
+                challenges in accurately detecting intrusions. Failure to prevent the intrusions could degrade the
+                credibility of security services, e.g. data confidentiality, integrity, and availability. Numerous
+                intrusion detection methods have been proposed in the literature to tackle computer security threats,
+                which can be broadly classified into Signature-based Intrusion Detection Systems (SIDS) and
+                Anomaly-based Intrusion Detection Systems (AIDS). This survey paper presents a taxonomy of contemporary
+                IDS, a comprehensive review of notable recent works, and an overview of the datasets commonly used for
+                evaluation purposes. It also presents evasion techniques used by attackers to avoid detection and
+                discusses future research challenges to counter such techniques so as to make computer systems more
+                secure.
+            </p>
+
+            <button onclick="location.href='https://insightmaker.com/insight/205630/General-Cyber-Resilience'"
+                class="btn btn-outline-secondary" type="button">Check out the model</button>
+        </div>
+    </div>
+
+    <!-- ================================ Model 2 JUMBOTRON ======================================= -->
+
+    <div class="p-5 mb-4 bg-light rounded-3" id="staff">
+        <div class="container-fluid py-5">
+            <h1 class="display-5 fw-bold">Staff Training and System Detection</h1>
+            <p class="col-md-8 fs-4">Cybersecurity training for employees has come a long way in the last few years.
+                Back in the day, security training was largely reserved for IT security specialists and then extended to
+                include IT personnel in general. These days, all employees need to be well educated in security best
+                practices and good habits if the organization wishes to steer clear of ransomware and malware.</p>
+            <button onclick="location.href='https://insightmaker.com/insight/205630/General-Cyber-Resilience'"
+                class="btn btn-outline-secondary" type="button">Check out the model</button>
+        </div>
+    </div>
+
+    <!-- ================================ Model 3 JUMBOTRON ======================================= -->
+
+    <div class="p-5 mb-4 bg-light rounded-3" id="info">
+        <div class="container-fluid py-5">
+            <h1 class="display-5 fw-bold">Information Security and Business Continuity Management</h1>
+            <p class="col-md-8 fs-4">Business continuity means keeping your business operations up and running despite
+                disruptions: natural disasters, pandemics, cyber attacks, other technical issues, and more. Your
+                business must always be operational for growth and sustainability.
+                Of course every business has its own unique operations and practices, and those traits influence your
+                specific business continuity plan. That said, all businesses in the digital era do have an online
+                presence – which means cybersecurity concerns must be incorporated into your continuity plan.</p>
+            <button onclick="location.href='https://insightmaker.com/insight/205630/General-Cyber-Resilience'"
+                class="btn btn-outline-secondary" type="button">Check out the model</button>
+        </div>
+    </div>
+
+    <!-- ================================ Model 4 JUMBOTRON ======================================= -->
+
+    <div class="p-5 mb-4 bg-light rounded-3" id="cyber">
+        <div class="container-fluid py-5">
+            <h1 class="display-5 fw-bold">Cyber Resilience Management in a Company</h1>
+            <p class="col-md-8 fs-4">The volume and velocity of cyber attacks aren't slowing any time soon. Companies
+                today need to be ready and able to protect their data in the event of an attack, while also being
+                prepared to handle fallout should a system be compromised. To keep your company running smoothly, teams
+                must to account for cybersecurity and cyber resilience.</p>
+            <button onclick="location.href='https://insightmaker.com/insight/205630/General-Cyber-Resilience'"
+                class="btn btn-outline-secondary" type="button">Check out the model</button>
+        </div>
+    </div>
+
+    <!-- ================================ SCRIPTS ======================================= -->
+    <!-- <a href="#" onclick="signOut();">Sign out</a> -->
+    <script>
+        function signOut() {
+            var auth2 = gapi.auth2.getAuthInstance();
+            auth2.signOut().then(function () {
+                console.log('User signed out.');
+            });
+        }
+    </script>
+
+    <script>
+        function onSignIn(googleUser) {
+
+            var id_token = googleUser.getAuthResponse().id_token;
+
+            var xhr = new XMLHttpRequest();
+            xhr.open('POST', '/');
+            xhr.setRequestHeader('Content-Type', 'application/json');
+            xhr.onload = function () {
+                console.log('Signed in as: ' + xhr.responseText);
+                if (xhr.responseText == 'success') {
+                    signOut();
+                    location.assign('/dashboard')
+                }
+            };
+            xhr.send(JSON.stringify({ token: id_token }));
+        }
+    </script>
+    <script src='../static/javascripts/javascript.js'></script>
+
+</body>
+
+</html>

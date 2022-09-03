@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css"
+        integrity="sha512-EZLkOqwILORob+p0BXZc+Vm3RgJBOe1Iq/0fiI7r/wJgzOFZMlsqTa29UEl6v6U6gsV4uIpsNZoV32YZqrCRCQ=="
+        crossorigin="anonymous" />
+
+
+    <title>Dashboard</title>
+
+
+    <!-- ==================== DEPENDENCIES =========================-->
+
+    <!-- JQUERY -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+
+    <!-- FIREBASE -->
+    <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-app.js"></script>
+</head>
+
+<body>
+
+    <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-primary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <strong>Cyber Ranges</strong>
+            </a>
+            <!-- <form class="d-flex"> -->
+            <!-- <button class="btn btn-light" type="submit">Search</button>
+                <a class="navbar-brand" href="#"> -->
+            <img src="<%= user.picture %>" alt="" width="30" height="30"
+                class="d-inline-block rounded-circle align-text-top" onerror="this.src='../static/assets/user.png'">
+            <!-- <Bootstrap> -->
+            <!-- </a>
+            </form> -->
+        </div>
+    </nav>
+
+    <!-- ================================ Model 1 JUMBOTRON ======================================= -->
+
+    <div class="p-5 mb-4 bg-light rounded-3">
+        <div class="container-fluid py-5">
+            <h1 class="display-5 fw-bold">It's time for a change, <%= user.name %>
+            </h1>
+            <p class="col-md-8 fs-4">“It takes 20 years to build a reputation and few minutes of cyber-incident to ruin
+                it.” (Stephane Nappo). This quote by the 2018 Chief Information Security Officer (CISO) of the year,
+                depicts the reality of the situation that we are living currently, because many companies focus solely
+                on the business side of their respective models and don’t focus on security. This tool will propagate
+                your knowledge to make safer business decisions.</p>
+            <button onclick="location.href='/model1'" class="btn btn-primary btn-lg" type="button">Get started</button>
+        </div>
+    </div>
+
+    <!-- =========================== FORM AND CHART CONTAINER ==============================-->
+    <div>
+        <div class="p-5 mb-4 bg-light rounded-3" id="tableAnchor">
+            <h1 class="display-5 fw-bold" id="dynamicTitle">
+                <%= data[0].date.slice(0,-14) %> Results:
+            </h1>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Investment Split Scores</th>
+                        <th scope="col">Model 1</th>
+                        <th scope="col">Model 2</th>
+                        <th scope="col">Model 3</th>
+                        <th scope="col">Model 4</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">Vulnerabilities</th>
+                        <td>
+                            <%= data[0].getScores().Vulnerabilities.toString() %>
+                        </td>
+                        <td>
+                            <%= data[1].getScores().Vulnerabilities.toString() %>
+                        </td>
+                        <td>
+                            <%= data[2].getScores().Vulnerabilities.toString() %>
+                        </td>
+                        <td>
+                            <%= data[3].getScores().Vulnerabilities.toString() %>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Impact</th>
+                        <td>
+                            <%= data[0].getScores().Impact.toString() %>
+                        </td>
+                        <td>
+                            <%= data[1].getScores().Impact.toString() %>
+                        </td>
+                        <td>
+                            <%= data[2].getScores().Impact.toString() %>
+                        </td>
+                        <td>
+                            <%= data[3].getScores().Impact.toString() %>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Technology</th>
+                        <td>
+                            <%= data[0].getScores().Technology.toString() %>
+                        </td>
+                        <td>
+                            <%= data[1].getScores().Technology.toString() %>
+                        </td>
+                        <td>
+                            <%= data[2].getScores().Technology.toString() %>
+                        </td>
+                        <td>
+                            <%= data[3].getScores().Technology.toString() %>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Training</th>
+                        <td>
+                            <%= data[0].getScores().Training.toString() %>
+                        </td>
+                        <td>
+                            <%= data[1].getScores().Training.toString() %>
+                        </td>
+                        <td>
+                            <%= data[2].getScores().Training.toString() %>
+                        </td>
+                        <td>
+                            <%= data[3].getScores().Training.toString() %>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Average Scores</th>
+                        <th scope="row" id="avg1">
+                            <%- ((parseFloat(data[0].getScores().Training) + parseFloat(data[0].getScores().Technology)
+                                + parseFloat(data[0].getScores().Impact) +
+                                parseFloat(data[0].getScores().Vulnerabilities))/4).toFixed(2).toString() %>
+                                </td>
+                        <th scope="row" id="avg2">
+                            <%- ((parseFloat(data[1].getScores().Training) + parseFloat(data[1].getScores().Technology)
+                                + parseFloat(data[1].getScores().Impact) +
+                                parseFloat(data[1].getScores().Vulnerabilities))/4).toFixed(2).toString() %>
+                                </td>
+                        <th scope="row" id="avg3">
+                            <%- ((parseFloat(data[2].getScores().Training) + parseFloat(data[2].getScores().Technology)
+                                + parseFloat(data[2].getScores().Impact) +
+                                parseFloat(data[2].getScores().Vulnerabilities))/4).toFixed(2).toString() %>
+                                </td>
+                        <th scope="row" id="avg4">
+                            <%- ((parseFloat(data[3].getScores().Training) + parseFloat(data[3].getScores().Technology)
+                                + parseFloat(data[3].getScores().Impact) +
+                                parseFloat(data[3].getScores().Vulnerabilities))/4).toFixed(2).toString() %>
+                                </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- <a href="/logout">Sign Out</a> -->
+    <div class="d-flex justify-content-center">
+        <button onclick="location.href='/logout'" class="btn btn-secondary btn-lg" type="button">Log
+            Out</button>
+    </div>
+
+    <!-- <button onclick="location.href='/logout'" class="btn btn-primary btn-lg" type="button">Sign Out</button> -->
+
+    <!-- JAVASCRIPT DEPENDENCIES -->
+    <script>
+        var dynamicTitle = document.getElementById('dynamicTitle');
+        const temporaryText = dynamicTitle.innerText;
+
+        var avg1 = parseFloat(document.getElementById('avg1').innerHTML);
+        var avg2 = parseFloat(document.getElementById('avg2').innerHTML);
+        var avg3 = parseFloat(document.getElementById('avg3').innerHTML);
+        var avg4 = parseFloat(document.getElementById('avg4').innerHTML);
+
+        const finalScore = (((avg1 + avg2 + avg3 + avg4) / 4).toFixed(2) * 100).toString();
+
+        console.log(avg1);
+        console.log(dynamicTitle);
+
+        if (avg1 === 0 || avg2 === 0 || avg3 === 0 || avg4 === 0) {
+            dynamicTitle.innerText = 'No runs have been completed.'
+        } else {
+            dynamicTitle.innerText = temporaryText + ' ' + finalScore + '%'
+        }
+    </script>
+    <!-- <script src='../static/javascripts/javascript.js'></script>
+    <script src='../static/javascripts/insightmakerController.js'></script>
+    <script src='../static/javascripts/model1Controller.js'></script> -->
+
+
+</body>
+
+</html>
