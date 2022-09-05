@@ -2,7 +2,9 @@
 
 A web app developed to facilitate the process of making decisions in the Cybersecurity spectrum from a management standpoint.
 
-![](static/assets/demo.gif)
+<p align="center">
+    <img width="800" src="static/assets/demo.gif" alt="Application Demo">
+</p>
 
 “It takes 20 years to build a reputation and few minutes of cyber-incident to ruin it.” (Stephane Nappo). This quote by the 2018 Chief Information Security Officer (CISO) of the year, depicts the reality of the situation that we are living currently, because many companies focus solely on the business side of their respective models and don’t focus on security.
 
