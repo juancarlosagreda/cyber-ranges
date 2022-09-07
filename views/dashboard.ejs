@@ -32,14 +32,8 @@
             <a class="navbar-brand" href="#">
                 <strong>Cyber Ranges</strong>
             </a>
-            <!-- <form class="d-flex"> -->
-            <!-- <button class="btn btn-light" type="submit">Search</button>
-                <a class="navbar-brand" href="#"> -->
             <img src="<%= user.picture %>" alt="" width="30" height="30"
                 class="d-inline-block rounded-circle align-text-top" onerror="this.src='../static/assets/user.png'">
-            <!-- <Bootstrap> -->
-            <!-- </a>
-            </form> -->
         </div>
     </nav>
 
@@ -58,7 +52,7 @@
         </div>
     </div>
 
-    <!-- =========================== FORM AND CHART CONTAINER ==============================-->
+    <!-- =========================== TABLE CONTAINER ==============================-->
     <div>
         <div class="p-5 mb-4 bg-light rounded-3" id="tableAnchor">
             <h1 class="display-5 fw-bold" id="dynamicTitle">
@@ -163,7 +157,7 @@
         </div>
     </div>
 
-    <!-- <a href="/logout">Sign Out</a> -->
+    <!-- LOG OUT -->
     <div class="d-flex justify-content-center">
         <button onclick="location.href='/logout'" class="btn btn-secondary btn-lg" type="button">Log
             Out</button>
@@ -192,11 +186,6 @@
             dynamicTitle.innerText = temporaryText + ' ' + finalScore + '%'
         }
     </script>
-    <!-- <script src='../static/javascripts/javascript.js'></script>
-    <script src='../static/javascripts/insightmakerController.js'></script>
-    <script src='../static/javascripts/model1Controller.js'></script> -->
-
-
 </body>
 
 </html>

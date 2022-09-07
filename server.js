@@ -17,6 +17,8 @@ const hash = require('./static/javascripts/hash');
 const { OAuth2Client } = require('google-auth-library');
 const client = new OAuth2Client(process.env.CLIENT_ID);
 
+// ----------- INIT DB -------------
+
 // Firebase
 require("firebase/firestore");
 const serviceAccount = require('./key/admin.json');
@@ -181,15 +183,15 @@ app.get('/model4', checkAuthenticated, (req, res) => {
 
 // --------------- MISC ROUTES --------------------
 
-// try out a protected route within authentication realm
-app.get('/protectedRoute', checkAuthenticated, (req, res) => {
-    res.send('This route is protected')
-})
-
 // erase cookies and send to landing page when logged out
 app.get('/logout', (req, res) => {
     res.clearCookie('session-token');
     res.redirect('/')
+})
+
+// try out a protected route within authentication realm
+app.get('/protectedRoute', checkAuthenticated, (req, res) => {
+    res.send('This route is protected')
 })
 
 // --------------- DATABASE UPLOADS --------------------
@@ -222,7 +224,8 @@ function checkAuthenticated(req, res, next) {
         // token verificaiton
         const ticket = await client.verifyIdToken({
             idToken: token,
-            audience: process.env.CLIENT_ID,  // Specify the CLIENT_ID of the app that accesses the backend
+            // Specify the CLIENT_ID of the app that accesses the backend
+            audience: process.env.CLIENT_ID,
         });
         const payload = ticket.getPayload();
         user.name = payload.name;

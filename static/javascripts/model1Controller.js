@@ -212,7 +212,6 @@ function drawChart() {
         i++
     }
     const model = document.getElementById('model').innerHTML;
-    console.log(model)
 
     if (model === 'Model 1' || model === 'Model 2' || model === 'Model 3' || model === 'Model 4') {
         // get results first before sending data as a whole.

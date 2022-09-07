@@ -61,6 +61,8 @@
 
 </head>
 
+<!-- ================================ NAVBAR ======================================= -->
+
 <body>
 
     <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-primary">
@@ -68,14 +70,8 @@
             <a class="navbar-brand" href="#">
                 <strong>Cyber Ranges</strong>
             </a>
-            <!-- <form class="d-flex"> -->
-            <!-- <button class="btn btn-light" type="submit">Search</button>
-                <a class="navbar-brand" href="#"> -->
             <img src="<%= user.picture %>" alt="" width="30" height="30"
                 class="d-inline-block rounded-circle align-text-top" onerror="this.src='../static/assets/user.png'">
-            <!-- <Bootstrap> -->
-            <!-- </a>
-            </form> -->
         </div>
     </nav>
 
@@ -150,6 +146,9 @@
     <br>
     <br>
     <br>
+
+    <!-- ================================ LOGOUT BUTTON ======================================= -->
+
     <div class="d-flex justify-content-center">
         <button onclick="location.href='/logout'" class="btn btn-secondary btn-lg" type="button">Log
             Out</button>
@@ -157,7 +156,6 @@
 
     <!-- JAVASCRIPT DEPENDENCIES -->
     <script src='../static/javascripts/javascript.js'></script>
-    <script src='../static/javascripts/insightmakerController.js'></script>
     <script src='../static/javascripts/model1Controller.js'></script>
 
 
